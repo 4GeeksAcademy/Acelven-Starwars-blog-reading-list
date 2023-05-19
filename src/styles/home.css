@@ -1,0 +1,21 @@
+.chars {
+  flex: auto;
+  display: inline-flex;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 10px;
+}
+.planets {
+  flex: auto;
+  display: inline-flex;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 10px;
+}
+.vehicles {
+  flex: auto;
+  display: inline-flex;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 10px;
+}
