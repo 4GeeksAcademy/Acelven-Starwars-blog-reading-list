@@ -1,32 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import "bootstrap/dist/css/bootstrap.css";
 // import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import Cards from "../component/chars";
-import CardFetch from "../component/CardFetch";
+import CardComponent from "../component/CardComp";
 
-export const Home = () => (
-  <>
-  <div>
-    <h2>Characters</h2>
-  </div>
-    <div className="chars">
-      <Cards /> <Cards /> <Cards /> <Cards />
-      <Cards />
-    </div>
+
+export const Home = () => {
+  const { store, actions } = useContext(Context)
+  return (
     <div>
-    <h2>Planets</h2>
-  </div>
-    <div className="planets">
-      <Cards /> <Cards /> <Cards /> <Cards />
-      <Cards />
+      <div>
+        <h1>People</h1>
+        <div className="dataRow">
+          {store.people.slice(0, 5).map((character, index) => {
+            return (
+              <div key={index}>
+                <CardComponent character={character} />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      <div>
+        <h1>Planets</h1>
+        <div className="dataRow"></div>
+      </div>
+      <div>
+        <h1>Vehicles</h1>
+        <div className="dataRow"></div>
+      </div>
     </div>
-    <div>
-    <h2>Vehicles</h2>
-  </div>
-    <div className="vehicles">
-      <Cards /> <Cards /> <Cards /> <Cards />
-      <Cards />
-    </div>
-  </>
-);
+  )
+
+}

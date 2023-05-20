@@ -5,10 +5,7 @@ const CardFetch = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch('https://www.swapi.tech/api/')
-      .then(response => response.json())
-      .then(data => setCards(data))
-      .catch(error => console.error(error));
+ 
   }, []);
 
   return (

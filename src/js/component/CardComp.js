@@ -1,13 +1,20 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-const CardComponent = ({ title, description }) => {
+const CardComponent = (props) => {
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <p className="card-text">{description}</p>
-      </div>
-    </div>
+
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>{props.character.name}</Card.Title>
+        <Card.Text>
+          {props.character.age}
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
   );
 };
 
