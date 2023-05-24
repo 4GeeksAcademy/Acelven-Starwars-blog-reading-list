@@ -13,9 +13,11 @@ const CardComponent = (props) => {
         <Card.Text>
 
         </Card.Text>
-        <Button variant="primary" href={props.details}>Details</Button>
-        <div className='favorites'>
-          <Button variant='danger'>{props.addFavorites}</Button>
+        <div className='cardButtons'>
+          <Button style={{ height: '2.5rem' }} variant="primary" href={props.details}>Details</Button>
+          <div className='favoritesButton'>
+            <div>{props.addFavorites}</div>
+          </div>
         </div>
       </Card.Body>
     </Card>

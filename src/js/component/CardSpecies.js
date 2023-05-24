@@ -13,8 +13,12 @@ const CardSpecies = (props) => {
                 <Card.Text>
 
                 </Card.Text>
-                <Button variant="primary" href={props.details}>Details</Button>
-                <Button>{props.addFavoritesSpecies}</Button>
+                <div className='cardButtons'>
+                    <Button style={{ height: '2.5rem' }} variant="primary" href={props.details}>Details</Button>
+                    <div className='favoritesButton'>
+                        <div>{props.addFavoritesSpecies}</div>
+                    </div>
+                </div>
             </Card.Body>
         </Card>
     );

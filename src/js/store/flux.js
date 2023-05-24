@@ -53,7 +53,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ favorites: [...store.favorites, data] });
 
 
-			}
+			},
+			handleRemove: index => {
+				const store = getStore();
+				const newFavorites = [...store.favorites];
+				const deletedItem = newFavorites[index]
+				newFavorites.splice(index, 1);
+				setStore({ favorites: newFavorites });
+			},
 
 
 		}

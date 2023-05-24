@@ -13,8 +13,12 @@ const CardPlanets = (props) => {
                 <Card.Text>
 
                 </Card.Text>
-                <Button variant="primary" href={props.details}>Details</Button>
-                <Button>{props.addFavoritesPlanets}</Button>
+                <div className='cardButtons'>
+                    <Button style={{ height: '2.5rem' }} variant="primary" href={props.details}>Details</Button>
+                    <div className='favoritesButton'>
+                        <div>{props.addFavoritesPlanets}</div>
+                    </div>
+                </div>
             </Card.Body>
         </Card>
     );
