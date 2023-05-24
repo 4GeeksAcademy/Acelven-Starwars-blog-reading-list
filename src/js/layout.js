@@ -3,14 +3,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import BasicExample from "./component/chars";
+// import BasicExample from "./component/chars";
 
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Details }  from "./views/details";
-
+import { Details } from "./views/details";
+import { DetailsPlanets } from "./views/detailsPlanets";
+import { DetailsSpecies } from "./views/detailsSpecies"
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -26,8 +27,9 @@ const Layout = () => {
           <Routes>
             {/* <Route path="/" element={<BasicExample />} /> */}
             <Route path="/" element={<Home />} />
-            <Route path="/details/" element={<Details />} />
-           
+            <Route path="/details/:theid" element={<Details />} />
+            <Route path="/detailsplanets/:theid" element={<DetailsPlanets />} />
+            <Route path="/detailsspecies/:theid" element={<DetailsSpecies />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
